@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 public class DiceDisplay<T> : MonoBehaviour
 {
@@ -11,6 +10,8 @@ public class DiceDisplay<T> : MonoBehaviour
     {
         DiceOption<T> result = dice.Roll();
         displaySpriteRenderer.sprite = result.sprite;
+
+        Debug.Log("Rolled " + result.name + " with " + gameObject.name);
 
         return result;
     }

@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1313639754869543241}
   - component: {fileID: 1313639754869543240}
-  - component: {fileID: 1313639754869543238}
-  - component: {fileID: 1313639754869543239}
+  - component: {fileID: -5463611080214470181}
   m_Layer: 0
-  m_Name: EnemyDice
+  m_Name: WeaponDice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 1}
+  m_Color: {r: 0.5120262, g: 0.9150943, b: 0.40143287, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,33 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1313639754869543238
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313639754869543245}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &1313639754869543239
+--- !u!114 &-5463611080214470181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,17 +95,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313639754869543245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c91435ec2c680d45bfc53d7993fc72d, type: 3}
+  m_Script: {fileID: 11500000, guid: d3acf240ca3e1e746ba587709cfcd99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dice:
     options:
-    - name: Bat
-      sprite: {fileID: -1479152319, guid: abd32430badb026479542f043855ce9c, type: 3}
-      value: {fileID: 6447477172539387291, guid: 7ae1b605dade4ca4b9faf9a0a51d5241, type: 3}
-    - name: Ghost
-      sprite: {fileID: -83738632, guid: abd32430badb026479542f043855ce9c, type: 3}
-      value: {fileID: 5797865917269443299, guid: 7f00e416e28339843b1b8e9c814223ce, type: 3}
+    - name: Pistol
+      sprite: {fileID: -1953935786, guid: abd32430badb026479542f043855ce9c, type: 3}
+      value: {fileID: 7891768652547126286, guid: 95be606f24ea93f439ba7cacff48e236, type: 3}
+    - name: Shotgun
+      sprite: {fileID: 1848500723, guid: abd32430badb026479542f043855ce9c, type: 3}
+      value: {fileID: 7891768652547126286, guid: c7f2d29fa7ce691409bfda45a872ccdd, type: 3}
   displaySpriteRenderer: {fileID: 1313639755278805831}
 --- !u!1 &1313639755278805830
 GameObject:

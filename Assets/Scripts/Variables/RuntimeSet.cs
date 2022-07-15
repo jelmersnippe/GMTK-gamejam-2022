@@ -9,7 +9,7 @@ public abstract class RuntimeSet<T> : ScriptableObject
     {
         if (!items.Contains(item))
         {
-            Debug.Log("Adding item");
+            Debug.Log("Adding item " + item + " to " + name);
             items.Add(item);
         }
     }
@@ -18,6 +18,7 @@ public abstract class RuntimeSet<T> : ScriptableObject
     {
         if (items.Contains(item))
         {
+            Debug.Log("Removing item " + item + " from " + name);
             items.Remove(item);
         }
     }

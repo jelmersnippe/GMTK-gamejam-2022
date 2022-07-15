@@ -2,11 +2,30 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public Projectile projectile;
-    public Transform firePoint;
+    public Transform rotationCenter;
+    public Weapon startingWeapon;
+    private Weapon activeWeapon;
 
-    public void Shoot(Vector2 targetPosition)
+    private void Start()
     {
-        Instantiate(projectile, firePoint.position, Quaternion.Euler(new Vector3(0f, 0f, MousePosition.GetAngleToMouse(firePoint.position))));
+        if (startingWeapon != null && activeWeapon == null)
+        {
+            EquipWeapon(startingWeapon);
+        }
+    }
+
+    public void Shoot()
+    {
+        if (activeWeapon == null)
+        {
+            return;
+        }
+
+        activeWeapon.Fire();
+    }
+
+    public void EquipWeapon(Weapon weapon)
+    {
+        activeWeapon = Instantiate(weapon, rotationCenter);
     }
 }

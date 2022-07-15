@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Shooting))]
 public class PlayerInput : MonoBehaviour
 {
+    public WeaponDice weaponDice;
     public Movement movement;
     public Shooting shooting;
 
@@ -27,7 +28,13 @@ public class PlayerInput : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            shooting.Shoot(MousePosition.Get());
+            shooting.Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            DiceOption<Weapon> weaponRoll = weaponDice.Roll();
+            shooting.EquipWeapon(weaponRoll.value);
         }
     }
 }
