@@ -3,16 +3,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public Transform rotationCenter;
-    public Weapon startingWeapon;
     private Weapon activeWeapon;
-
-    private void Start()
-    {
-        if (startingWeapon != null && activeWeapon == null)
-        {
-            EquipWeapon(startingWeapon);
-        }
-    }
 
     public void Shoot()
     {
@@ -22,6 +13,11 @@ public class Shooting : MonoBehaviour
         }
 
         activeWeapon.Fire();
+    }
+
+    public void EquipWeapon(WeaponReference weapon)
+    {
+        activeWeapon = Instantiate(weapon.value, rotationCenter);
     }
 
     public void EquipWeapon(Weapon weapon)

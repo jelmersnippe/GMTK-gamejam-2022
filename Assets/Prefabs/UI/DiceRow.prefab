@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a616babe70f1dda48997b459e98179a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placeholder: {fileID: 7482667652216324306, guid: 86d6cfcfbfb4ed046a850cd9c7fd50cf, type: 3}
   dieUIPrefab: {fileID: -8493387475503067802, guid: 0edadbba29d754b4a9063fc720adc1fb, type: 3}
   label: {fileID: 1738762158220848063}
   diceContainer: {fileID: 1294203160854163849}

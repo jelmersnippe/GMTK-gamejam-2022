@@ -1,15 +1,12 @@
 using UnityEngine;
 
+// TODO: Remove unnecessary wrapper class
 public class DiceDisplay<T> : MonoBehaviour
 {
     public Dice<T> dice;
 
     public DiceOption<T> Roll()
     {
-        DiceOption<T> result = dice.Roll();
-
-        Debug.Log("Rolled " + result.name + " with " + gameObject.name);
-
-        return result;
+        return dice.Roll();
     }
 }

@@ -15,6 +15,8 @@ public class DiceRowUI : MonoBehaviour
     public void AddDiceUiItem(Sprite sprite)
     {
         DieUI createdUI = Instantiate(dieUIPrefab, diceContainer);
+
+        createdUI.display.gameObject.SetActive(sprite != null);
         createdUI.SetDisplay(sprite);
     }
 

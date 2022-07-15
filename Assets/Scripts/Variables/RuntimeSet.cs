@@ -5,14 +5,16 @@ public abstract class RuntimeSet<T> : ScriptableObject
 {
     public List<T> items = new List<T>();
 
-    public void Add(T item, bool unique = true)
+    public virtual void Add(T item)
     {
-        // TODO: If a RuntimeSet with unique values is required we can just create another wrapper around this implementation
-        Debug.Log("Adding item " + item + " to " + name);
-        items.Add(item);
+        if (!items.Contains(item))
+        {
+            Debug.Log("Adding item " + item + " to " + name);
+            items.Add(item);
+        }
     }
 
-    public void Remove(T item)
+    public virtual void Remove(T item)
     {
         if (items.Contains(item))
         {
@@ -21,8 +23,8 @@ public abstract class RuntimeSet<T> : ScriptableObject
         }
     }
 
-    public void Clean()
+    public void Clear()
     {
-        items = new List<T>();
+        items.Clear();
     }
 }

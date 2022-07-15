@@ -8,6 +8,7 @@ public class GameEvent : ScriptableObject
 
     public void Raise()
     {
+        Debug.Log("Raising GameEvent: " + name);
         for (int i = eventListeners.Count - 1; i >= 0; i--)
         {
             eventListeners[i].OnEventRaised();

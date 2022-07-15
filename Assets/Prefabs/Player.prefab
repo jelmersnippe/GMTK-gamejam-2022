@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3779917378401923370}
   - component: {fileID: 3779917378401923371}
   - component: {fileID: 3779917378401923383}
+  - component: {fileID: 942459365}
+  - component: {fileID: 8430335722284663575}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -192,8 +194,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269c7910fd7e6394ba2c781961c18b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationCenter: {fileID: 0}
-  startingWeapon: {fileID: 0}
+  rotationCenter: {fileID: 3779917379374418126}
+--- !u!114 &942459365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779917378401923368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e80d222325d445bf1a140d78b706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: c8536d2c5b4fb294c9b269f1292cfdcf, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3779917378401923383}
+        m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
+        m_MethodName: EquipWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bb9f5d3b67126ab4ebab26aa283a7780, type: 2}
+          m_ObjectArgumentAssemblyTypeName: WeaponReference, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8430335722284663575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779917378401923368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17e80d222325d445bf1a140d78b706c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: f85a263b60fe4fc428b02fcdb0157d7c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3779917378401923383}
+        m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
+        m_MethodName: EquipWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bb9f5d3b67126ab4ebab26aa283a7780, type: 2}
+          m_ObjectArgumentAssemblyTypeName: WeaponReference, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3779917379374418127
 GameObject:
   m_ObjectHideFlags: 0
