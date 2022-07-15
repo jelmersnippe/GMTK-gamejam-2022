@@ -1,26 +1,41 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiceController : MonoBehaviour
 {
     public WeaponDice weaponDice;
     public EnemyDice enemyDice;
 
-    public List<DiceOption<Weapon>> weaponRolls = new List<DiceOption<Weapon>>();
-    public List<DiceOption<Enemy>> enemyRolls = new List<DiceOption<Enemy>>();
+    public EnemyRuntimeSet enemiesToSpawn;
+    public WeaponReference weaponToSpawn;
 
     public DiceRowUI weaponDiceRowUI;
     public DiceRowUI enemyDiceRowUI;
 
-    public void RollWeapons(int count)
+    public Button rollButton;
+    public Button startButton;
+
+    private void Start()
+    {
+        Reset();
+    }
+
+    public void Reset()
+    {
+        enemiesToSpawn.Clean();
+        weaponDiceRowUI.Clear();
+        enemyDiceRowUI.Clear();
+        rollButton.gameObject.SetActive(true);
+        startButton.gameObject.SetActive(false);
+    }
+
+    public void RollWeapon()
     {
         weaponDiceRowUI.Clear();
-        for (int i = 0; i < count; i++)
-        {
-            DiceOption<Weapon> rolledWeapon = weaponDice.Roll();
-            weaponRolls.Add(rolledWeapon);
-            weaponDiceRowUI.AddDiceUiItem(rolledWeapon.sprite);
-        }
+
+        DiceOption<Weapon> rolledWeapon = weaponDice.Roll();
+        weaponToSpawn.value = rolledWeapon.value;
+        weaponDiceRowUI.AddDiceUiItem(rolledWeapon.sprite);
     }
 
     public void RollEnemies(int count)
@@ -29,8 +44,16 @@ public class DiceController : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
-            enemyRolls.Add(rolledEnemy);
+            enemiesToSpawn.Add(rolledEnemy.value);
             enemyDiceRowUI.AddDiceUiItem(rolledEnemy.sprite);
         }
+    }
+
+    public void Roll(int enemyCount)
+    {
+        RollWeapon();
+        RollEnemies(enemyCount);
+        rollButton.gameObject.SetActive(false);
+        startButton.gameObject.SetActive(true);
     }
 }

@@ -1,34 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public EnemyDice enemyDice;
-    public float spawnDelay = 2f;
-    public float spawnInterval = 5f;
-    private float remainingTimeBetweenSpawns;
-
-    private void Update()
-    {
-        if (spawnDelay > 0)
-        {
-            spawnDelay -= Time.deltaTime;
-            return;
-        }
-
-        remainingTimeBetweenSpawns -= Time.deltaTime;
-
-        if (remainingTimeBetweenSpawns <= 0)
-        {
-            Spawn();
-            remainingTimeBetweenSpawns = spawnInterval;
-        }
-    }
+    public EnemyRuntimeSet enemiesToSpawn;
 
     public void Spawn()
     {
-        DiceOption<Enemy> enemyRoll = enemyDice.Roll();
-        Instantiate(enemyRoll.value, transform);
+        foreach (Enemy enemy in enemiesToSpawn.items)
+        {
+            // TODO: Add proper spawn randomization
+            Instantiate(enemy, new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f)), Quaternion.identity, transform);
+        }
     }
 }

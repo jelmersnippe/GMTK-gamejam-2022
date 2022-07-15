@@ -4,7 +4,6 @@ public class DebugInput : MonoBehaviour
 {
     public DiceController diceController;
     public int enemyRollCount = 1;
-    public int weaponRollCount = 1;
 
     void Update()
     {
@@ -14,7 +13,7 @@ public class DebugInput : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            diceController.RollWeapons(weaponRollCount);
+            diceController.RollWeapon();
         }
     }
 }
