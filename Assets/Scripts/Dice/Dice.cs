@@ -19,11 +19,13 @@ public class DiceOption<T>
 {
 
     public string name;
+    public Sprite sprite;
     public T value;
 
-    public DiceOption(string name, T value)
+    public DiceOption(string name, Sprite sprite, T value)
     {
         this.name = name;
+        this.sprite = sprite;
         this.value = value;
     }
 }

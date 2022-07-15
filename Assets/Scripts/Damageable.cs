@@ -3,18 +3,18 @@ using UnityEngine;
 public class Damageable : MonoBehaviour
 {
     public int maxHealth;
-    public int currentHealth;
+    public IntReference currentHealth;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth.value = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth -= damage, 0, maxHealth);
+        currentHealth.value = Mathf.Clamp(currentHealth.value -= damage, 0, maxHealth);
 
-        if (currentHealth <= 0)
+        if (currentHealth.value <= 0)
         {
             Destroy(gameObject);
         }
