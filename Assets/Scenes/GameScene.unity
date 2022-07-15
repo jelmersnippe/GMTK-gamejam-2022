@@ -549,10 +549,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 154665720, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1249640742, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -673,10 +669,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 2775891903194875847, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
-      propertyPath: enemiesToSpawn
-      value: 
-      objectReference: {fileID: 11400000, guid: 6f0a2ee1adb301b4d812242b653c9a5c, type: 2}
     - target: {fileID: 3656954591827237806, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

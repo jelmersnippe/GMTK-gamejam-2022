@@ -7,7 +7,7 @@ public class DiceController : MonoBehaviour
     public WeaponDice weaponDice;
     public EnemyDice enemyDice;
 
-    public EnemySpawnRuntimeDictionary enemiesToSpawn;
+    public EnemyRuntimeSet enemiesToSpawn;
     public WeaponReference weaponToSpawn;
 
     public DiceRowUI weaponDiceRowUI;

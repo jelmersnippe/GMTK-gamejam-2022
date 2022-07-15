@@ -7,11 +7,8 @@ public abstract class RuntimeSet<T> : ScriptableObject
 
     public virtual void Add(T item)
     {
-        if (!items.Contains(item))
-        {
-            Debug.Log("Adding item " + item + " to " + name);
-            items.Add(item);
-        }
+        Debug.Log("Adding item " + item + " to " + name);
+        items.Add(item);
     }
 
     public virtual void Remove(T item)

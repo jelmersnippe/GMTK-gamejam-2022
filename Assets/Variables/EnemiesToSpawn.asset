@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05233b2609b8172428d386dbff20b1f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9156f94f95827544db33037ef9d2e6df, type: 3}
   m_Name: EnemiesToSpawn
   m_EditorClassIdentifier: 
+  items: []
