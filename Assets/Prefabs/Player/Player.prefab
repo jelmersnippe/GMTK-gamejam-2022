@@ -162,6 +162,7 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 752372a3d2cb2ec419692a734fa8be33, type: 2}
   healthBar: {fileID: 0}
+  invincibilityTime: 1
 --- !u!114 &3779917378401923370
 MonoBehaviour:
   m_ObjectHideFlags: 0

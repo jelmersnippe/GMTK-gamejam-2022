@@ -6,6 +6,9 @@ public class Damageable : MonoBehaviour
     public IntReference maxHealth;
     [field: SerializeField] public IntReference currentHealth { get; private set; }
     public HealthBar healthBar;
+    public float invincibilityTime;
+
+    private float remainingInvicibiltyTime;
 
     private void Start()
     {
@@ -14,9 +17,23 @@ public class Damageable : MonoBehaviour
         UpdateHealthBar();
     }
 
+    private void Update()
+    {
+        if (remainingInvicibiltyTime > 0f)
+        {
+            remainingInvicibiltyTime -= Time.deltaTime;
+        }
+    }
+
     public void TakeDamage(int damage)
     {
+        if (remainingInvicibiltyTime > 0f)
+        {
+            return;
+        }
+
         currentHealth.ApplyChange(-damage);
+        remainingInvicibiltyTime = invincibilityTime;
         OnHealthUpdate.Raise();
         UpdateHealthBar();
 
