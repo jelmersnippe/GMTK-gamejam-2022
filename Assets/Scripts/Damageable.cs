@@ -8,15 +8,18 @@ public class Damageable : MonoBehaviour
     // SO WE CAN HAVE THE UI AND CONTROLLERS READ THE OBJECT
     // ENEMIES DO NOT WANT A REFERENCE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     [field: SerializeField] public int currentHealth { get; private set; }
+    public HealthBar healthBar;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        UpdateHealthBar();
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth = Mathf.Clamp(currentHealth -= damage, 0, maxHealth);
+        UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
@@ -24,5 +27,10 @@ public class Damageable : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject);
         }
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar?.SetFill((float)currentHealth / (float)maxHealth);
     }
 }
