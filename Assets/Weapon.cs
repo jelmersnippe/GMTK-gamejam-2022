@@ -4,6 +4,7 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public Projectile projectile;
+    public SpriteRenderer spriteRenderer;
 
     [Header("Weapon Stats")]
     [Min(0.1f)]

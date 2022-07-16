@@ -267,7 +267,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -685,6 +685,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2775891903194875845, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775891903194875845, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].name
+      value: Ghost
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775891903194875845, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].value
+      value: 
+      objectReference: {fileID: 1770794597850725484, guid: f2dfa513963aeae47b3e6aeb72a6837b, type: 3}
+    - target: {fileID: 2775891903194875845, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: -1796751367, guid: abd32430badb026479542f043855ce9c, type: 3}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].name
+      value: Assault Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].value
+      value: 
+      objectReference: {fileID: 7891768652547126286, guid: 827dc15112be7414daa2ae009b3b7c59, type: 3}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c14e976cd9954044292dc60da08ad568, type: 3}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3de6f73068c723241ab2e86ba9339640, type: 3}
+    - target: {fileID: 2775891903194875846, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
+      propertyPath: dice.options.Array.data[2].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a697508a8fe3359468ec72cde6791a93, type: 3}
     - target: {fileID: 3656954591827237806, guid: 6b95bf4e2d019624db50e04b62894ba2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

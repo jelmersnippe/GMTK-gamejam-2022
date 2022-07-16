@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 7891768652714711582}
   projectile: {fileID: 1828103225839008167, guid: 6729c7356fc6df348adc050b197c5cfb, type: 3}
+  spriteRenderer: {fileID: 7891768652547126283}
   fireRate: 0.5
   damage: 5
   shots: 6
