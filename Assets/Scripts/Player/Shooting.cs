@@ -4,6 +4,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform rotationCenter;
     [SerializeField] private Weapon activeWeapon;
+    public UpgradeRuntimeSet upgradesToApply;
 
     public void RotateWeaponToTarget(Vector3 target)
     {
@@ -41,5 +42,10 @@ public class Shooting : MonoBehaviour
             Destroy(activeWeapon.gameObject);
         }
         activeWeapon = Instantiate(weapon, rotationCenter);
+
+        foreach (Upgrade upgrade in upgradesToApply.items)
+        {
+            upgrade.Apply(activeWeapon);
+        }
     }
 }

@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
         transform.position += transform.right * speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         int otherInstanceId = other.gameObject.GetInstanceID();
         if (hitIds.Contains(otherInstanceId) || targetMask != (targetMask | (1 << other.gameObject.layer)))

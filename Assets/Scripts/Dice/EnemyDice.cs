@@ -1,4 +1,5 @@
-public class EnemyDice : DiceDisplay<Enemy>
+[System.Serializable]
+public class EnemyDice : Dice<Enemy>
 {
 
 }

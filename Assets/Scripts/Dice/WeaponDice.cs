@@ -1,3 +1,4 @@
-public class WeaponDice : DiceDisplay<Weapon>
+[System.Serializable]
+public class WeaponDice : Dice<Weapon>
 {
 }

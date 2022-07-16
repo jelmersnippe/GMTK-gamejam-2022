@@ -1,23 +1,24 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DiceController : MonoBehaviour
 {
     public WeaponDice weaponDice;
     public EnemyDice enemyDice;
+    public UpgradeDice upgradeDice;
 
     public EnemyRuntimeSet enemiesToSpawn;
     public WeaponReference weaponToSpawn;
+    public UpgradeRuntimeSet upgradesToApply;
 
     public DiceRowUI weaponDiceRowUI;
     public DiceRowUI enemyDiceRowUI;
-
-    public Button rollButton;
-    public Button startButton;
+    public DiceRowUI upgradeDiceRowUI;
 
     public TextMeshProUGUI roundText;
+    public TextMeshProUGUI rollsRemainingUI;
     public IntReference currentRound;
+    public IntReference rollsRemaining;
 
     private void Start()
     {
@@ -26,45 +27,93 @@ public class DiceController : MonoBehaviour
 
     public void Reset()
     {
-        enemiesToSpawn.Clear();
-        weaponDiceRowUI.Clear();
-        enemyDiceRowUI.Clear();
-        rollButton.gameObject.SetActive(true);
-        startButton.gameObject.SetActive(false);
+        UpdateRollsRemaining(3);
         roundText.text = "Round: " + currentRound.Value;
 
-        weaponDiceRowUI.AddDiceUiItem(null);
-        for (int i = 0; i < currentRound.Value; i++)
-        {
-            enemyDiceRowUI.AddDiceUiItem(null);
-        }
+        RollWeapon(false);
+        RollEnemies(false);
+        RollUpgrades(false);
     }
 
-    public void RollWeapon()
+    public void RollWeapon(bool reduceRemainingRolls = true)
     {
+        if (rollsRemaining <= 0)
+        {
+            return;
+        }
+
         weaponDiceRowUI.Clear();
 
         DiceOption<Weapon> rolledWeapon = weaponDice.Roll();
         weaponToSpawn.value = rolledWeapon.value;
         weaponDiceRowUI.AddDiceUiItem(rolledWeapon.sprite);
+
+        if (reduceRemainingRolls)
+        {
+            UpdateRollsRemaining(rollsRemaining.Value - 1);
+        }
     }
 
-    public void RollEnemies(int count)
+    public void RollEnemies(bool reduceRemainingRolls = true)
     {
+        if (rollsRemaining <= 0)
+        {
+            return;
+        }
+
+        enemiesToSpawn.Clear();
         enemyDiceRowUI.Clear();
-        for (int i = 0; i < count; i++)
+
+        for (int i = 0; i < currentRound; i++)
         {
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
             enemiesToSpawn.Add(rolledEnemy.value);
             enemyDiceRowUI.AddDiceUiItem(rolledEnemy.sprite);
+        }
+
+        if (reduceRemainingRolls)
+        {
+            UpdateRollsRemaining(rollsRemaining.Value - 1);
+        }
+    }
+
+    public void RollUpgrades(bool reduceRemainingRolls = true)
+    {
+        if (rollsRemaining <= 0)
+        {
+            return;
+        }
+
+        upgradesToApply.Clear();
+        upgradeDiceRowUI.Clear();
+
+        for (int i = 0; i < currentRound; i++)
+        {
+            DiceOption<Upgrade> rolledUpgrade = upgradeDice.Roll();
+            upgradesToApply.Add(rolledUpgrade.value);
+            upgradeDiceRowUI.AddDiceUiItem(rolledUpgrade.sprite);
+        }
+
+        if (reduceRemainingRolls)
+        {
+            UpdateRollsRemaining(rollsRemaining.Value - 1);
         }
     }
 
     public void Roll()
     {
         RollWeapon();
-        RollEnemies(currentRound.Value);
-        rollButton.gameObject.SetActive(false);
-        startButton.gameObject.SetActive(true);
+        RollEnemies();
+        RollUpgrades();
+    }
+
+    private void UpdateRollsRemaining(int newValue)
+    {
+        rollsRemaining.SetValue(newValue);
+        rollsRemainingUI.text = "Rolls: " + newValue + "/3";
+
+        weaponDiceRowUI.rollButton.interactable = rollsRemaining > 0;
+        enemyDiceRowUI.rollButton.interactable = rollsRemaining > 0;
+        upgradeDiceRowUI.rollButton.interactable = rollsRemaining > 0;
     }
 }

@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnHealthUpdate: {fileID: 11400000, guid: 6405999e6211ee94d97393e0effd1861, type: 2}
-  OnDeath: {fileID: 11400000, guid: 294ea9fc60055bf4dbd29d23defce921, type: 2}
   maxHealth:
     UseConstant: 0
     ConstantValue: 0
@@ -204,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationCenter: {fileID: 3779917379374418126}
   activeWeapon: {fileID: 0}
+  upgradesToApply: {fileID: 11400000, guid: 6e4960a7d7f9bed41b8639c2a2628fc4, type: 2}
 --- !u!114 &942459365
 MonoBehaviour:
   m_ObjectHideFlags: 0
