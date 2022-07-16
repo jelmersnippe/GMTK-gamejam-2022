@@ -5,7 +5,7 @@ public class ContactDamage : MonoBehaviour
     public int damage;
     public LayerMask targetMask;
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionStay2D(Collision2D other)
     {
         int otherInstanceId = other.gameObject.GetInstanceID();
         if (targetMask != (targetMask | (1 << other.gameObject.layer)))

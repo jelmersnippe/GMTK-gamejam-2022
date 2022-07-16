@@ -1,14 +1,24 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PauseController : MonoBehaviour
 {
     public GameObject pauseOverlay;
+    public TextMeshProUGUI titleUI;
+    public GameObject continueButton;
+    public bool isGameOver = false;
     public bool overlayActive = false;
 
-    private float initialTimeScale;
+    private float initialTimeScale = 1f;
 
     private void Update()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (overlayActive)
@@ -35,5 +45,13 @@ public class PauseController : MonoBehaviour
         Time.timeScale = initialTimeScale;
         pauseOverlay.SetActive(false);
         overlayActive = false;
+    }
+
+    public void SetGameOver()
+    {
+        isGameOver = true;
+        titleUI.text = "GAME OVER";
+        continueButton.SetActive(false);
+        Enable();
     }
 }
