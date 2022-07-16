@@ -31,11 +31,15 @@ public class DiceController : MonoBehaviour
 
     public void Reset()
     {
+        // Set rolls to 6 because we do a full round of rolls
+        UpdateRollsRemaining(6);
+
         roundText.text = "Round: " + currentRound.Value;
 
         while (currentRound > rolledEnemies.Count)
         {
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
+            Debug.Log("Init enemies updating UI");
             enemyDiceRowUI.UpdateDiceUiItem(rolledEnemies.Count, rolledEnemy.sprite);
             rolledEnemies.Add(rolledEnemy);
         }
@@ -43,12 +47,14 @@ public class DiceController : MonoBehaviour
         while (currentRound > rolledUpgrades.Count)
         {
             DiceOption<Upgrade> rolledUpgrade = upgradeDice.Roll();
+            Debug.Log("Init upgrades updating UI");
             upgradeDiceRowUI.UpdateDiceUiItem(rolledUpgrades.Count, rolledUpgrade.sprite);
             rolledUpgrades.Add(rolledUpgrade);
         }
 
+        RollEnemies();
+        RollUpgrades();
         RollWeapon();
-
         UpdateRollsRemaining(3);
     }
 
@@ -59,10 +65,9 @@ public class DiceController : MonoBehaviour
             return;
         }
 
-        weaponDiceRowUI.Clear();
-
         DiceOption<Weapon> rolledWeapon = weaponDice.Roll();
         weaponToSpawn.value = rolledWeapon.value;
+        Debug.Log("RollWeapon updating UI");
         weaponDiceRowUI.UpdateDiceUiItem(0, rolledWeapon.sprite);
 
         UpdateRollsRemaining(rollsRemaining.Value - 1);
@@ -84,6 +89,7 @@ public class DiceController : MonoBehaviour
 
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
             rolledEnemies[i] = rolledEnemy;
+            Debug.Log("RollEnemies updating UI");
             enemyDiceRowUI.UpdateDiceUiItem(i, rolledEnemy.sprite);
         }
 
@@ -106,6 +112,7 @@ public class DiceController : MonoBehaviour
 
             DiceOption<Upgrade> rolledUpgrade = upgradeDice.Roll();
             rolledUpgrades[i] = rolledUpgrade;
+            Debug.Log("RollUpgrades updating UI");
             upgradeDiceRowUI.UpdateDiceUiItem(i, rolledUpgrade.sprite);
         }
 
