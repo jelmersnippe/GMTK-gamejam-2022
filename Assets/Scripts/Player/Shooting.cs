@@ -3,7 +3,18 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public Transform rotationCenter;
-    private Weapon activeWeapon;
+    [SerializeField] private Weapon activeWeapon;
+
+    public void RotateWeaponToTarget(Vector3 target)
+    {
+        if (Time.timeScale <= 0f)
+        {
+            return;
+        }
+
+        float angle = Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg;
+        rotationCenter.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+    }
 
     public void Shoot()
     {

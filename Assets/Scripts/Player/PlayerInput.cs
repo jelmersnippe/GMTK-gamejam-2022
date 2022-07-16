@@ -27,10 +27,11 @@ public class PlayerInput : MonoBehaviour
         }
 
         Vector2 movementInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        shooting.RotateWeaponToTarget(MousePosition.Get());
 
         movement.Move(movementInput);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             shooting.Shoot();
         }
