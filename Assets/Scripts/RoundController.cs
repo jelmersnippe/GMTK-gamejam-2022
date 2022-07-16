@@ -13,6 +13,16 @@ public class RoundController : MonoBehaviour
     public GameEvent OnRoundLose;
     public GameEvent OnPlayerSpawn;
 
+    private void OnEnable()
+    {
+        Time.timeScale = 1f;
+    }
+
+    private void OnDisable()
+    {
+        Time.timeScale = 0;
+    }
+
     private void Update()
     {
         // TODO: Should listen to an enemy death event instead for performance
@@ -34,11 +44,23 @@ public class RoundController : MonoBehaviour
 
     public void SpawnPlayer()
     {
-        if (currentRound.value == 1)
+        // TODO: Don't keep this reference
+        if (playerDamageable == null)
         {
-            // TODO: Don't keep this reference
             playerDamageable = Instantiate(playerPrefab).GetComponent<Damageable>();
             OnPlayerSpawn.Raise();
+        }
+
+        playerDamageable.transform.position = Vector3.zero;
+    }
+
+    public void RemoveActiveProjectiles()
+    {
+        Projectile[] activeProjectiles = FindObjectsOfType<Projectile>();
+
+        foreach (Projectile projectile in activeProjectiles)
+        {
+            Destroy(projectile.gameObject);
         }
     }
 }

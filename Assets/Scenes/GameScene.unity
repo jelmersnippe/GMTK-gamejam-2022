@@ -396,6 +396,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesToSpawn: {fileID: 11400000, guid: 6f0a2ee1adb301b4d812242b653c9a5c, type: 2}
+  minXOffset: 7.5
+  maxXOffset: 15
+  minYOffset: 7.5
+  maxYOffset: 15
 --- !u!4 &718093065
 Transform:
   m_ObjectHideFlags: 0
@@ -522,6 +526,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1333561092}
         m_TargetAssemblyTypeName: RoundController, Assembly-CSharp
         m_MethodName: SpawnPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1333561092}
+        m_TargetAssemblyTypeName: RoundController, Assembly-CSharp
+        m_MethodName: RemoveActiveProjectiles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
