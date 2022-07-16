@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameEvent OnDeath;
     public EnemyRuntimeSet activeEnemies;
+
     private void OnEnable()
     {
         activeEnemies.Add(this);
@@ -11,5 +13,6 @@ public class Enemy : MonoBehaviour
     private void OnDisable()
     {
         activeEnemies.Remove(this);
+        OnDeath.Raise();
     }
 }

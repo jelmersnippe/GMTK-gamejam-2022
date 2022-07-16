@@ -2,23 +2,22 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    public int maxHealth;
-    // TODO: Change to IntReference, which can also be a constant!
-    // ENEMIES REQUIRE A CONSTANT, BUT THE PLAYER NEEDS A REFERENCE
-    // SO WE CAN HAVE THE UI AND CONTROLLERS READ THE OBJECT
-    // ENEMIES DO NOT WANT A REFERENCE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    [field: SerializeField] public int currentHealth { get; private set; }
+    public GameEvent OnHealthUpdate;
+    public IntReference maxHealth;
+    [field: SerializeField] public IntReference currentHealth { get; private set; }
     public HealthBar healthBar;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth.SetValue(maxHealth);
+        OnHealthUpdate.Raise();
         UpdateHealthBar();
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth -= damage, 0, maxHealth);
+        currentHealth.ApplyChange(-damage);
+        OnHealthUpdate.Raise();
         UpdateHealthBar();
 
         if (currentHealth <= 0)

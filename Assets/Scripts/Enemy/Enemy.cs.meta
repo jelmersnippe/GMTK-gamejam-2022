@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - OnDeath: {fileID: 11400000, guid: 8e49f36b3c3ce7548a5b320bf00e220f, type: 2}
   - activeEnemies: {fileID: 11400000, guid: e8427ccfe608a884ca64b2233a519fd8, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}

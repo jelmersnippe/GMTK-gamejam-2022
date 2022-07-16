@@ -152,8 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3798b34c1c3cb844adf9ad087e04481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  <currentHealth>k__BackingField: 0
+  OnHealthUpdate: {fileID: 11400000, guid: 6405999e6211ee94d97393e0effd1861, type: 2}
+  OnDeath: {fileID: 11400000, guid: 294ea9fc60055bf4dbd29d23defce921, type: 2}
+  maxHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: de01af7c9feacd2419c4be9ef779fd95, type: 2}
+  <currentHealth>k__BackingField:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 752372a3d2cb2ec419692a734fa8be33, type: 2}
+  healthBar: {fileID: 0}
 --- !u!114 &3779917378401923370
 MonoBehaviour:
   m_ObjectHideFlags: 0

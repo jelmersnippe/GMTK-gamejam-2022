@@ -10,7 +10,6 @@ public class Spawner : MonoBehaviour
 
     public void Spawn()
     {
-        ClearActiveEnemies();
         foreach (Enemy enemy in enemiesToSpawn.items)
         {
 

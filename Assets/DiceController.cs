@@ -31,10 +31,10 @@ public class DiceController : MonoBehaviour
         enemyDiceRowUI.Clear();
         rollButton.gameObject.SetActive(true);
         startButton.gameObject.SetActive(false);
-        roundText.text = "Round: " + currentRound.value;
+        roundText.text = "Round: " + currentRound.Value;
 
         weaponDiceRowUI.AddDiceUiItem(null);
-        for (int i = 0; i < currentRound.value; i++)
+        for (int i = 0; i < currentRound.Value; i++)
         {
             enemyDiceRowUI.AddDiceUiItem(null);
         }
@@ -63,7 +63,7 @@ public class DiceController : MonoBehaviour
     public void Roll()
     {
         RollWeapon();
-        RollEnemies(currentRound.value);
+        RollEnemies(currentRound.Value);
         rollButton.gameObject.SetActive(false);
         startButton.gameObject.SetActive(true);
     }

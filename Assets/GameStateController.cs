@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class GameStateController : MonoBehaviour
 {
-    public IntReference currentRound;
+    public IntVariable currentRound;
 
     private void Awake()
     {
-        currentRound.value = 1;
+        currentRound.SetValue(1);
 
         DontDestroyOnLoad(gameObject);
     }

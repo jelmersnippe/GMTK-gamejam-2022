@@ -183,8 +183,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3798b34c1c3cb844adf9ad087e04481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
-  <currentHealth>k__BackingField: 0
+  OnHealthUpdate: {fileID: 11400000, guid: 63a29357b4560be4aaa3af32d1412539, type: 2}
+  maxHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 2e4d74735351f41438125228fac02981, type: 2}
+  <currentHealth>k__BackingField:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
   healthBar: {fileID: 4494507639371409916}
 --- !u!114 &1770794597850725484
 MonoBehaviour:
@@ -198,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80400e36dc7d114c89203a0ac2d40ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDeath: {fileID: 11400000, guid: 8e49f36b3c3ce7548a5b320bf00e220f, type: 2}
   activeEnemies: {fileID: 11400000, guid: e8427ccfe608a884ca64b2233a519fd8, type: 2}
 --- !u!114 &1770794597850725487
 MonoBehaviour:

@@ -4,11 +4,12 @@ public class RoundController : MonoBehaviour
 {
     public PlayerInput playerPrefab;
 
-    public IntReference currentRound;
-    public EnemyRuntimeSet activeEnemies;
-    // TODO: Change back to Reference once we've fixed it in the player/enemy damageable
-    // public IntReference playerHealth;
+
+    // TODO: Remove this link
     public Damageable playerDamageable;
+    public IntVariable currentRound;
+    public EnemyRuntimeSet activeEnemies;
+    public IntReference currentPlayerHealth;
     public GameEvent OnRoundWin;
     public GameEvent OnRoundLose;
     public GameEvent OnPlayerSpawn;
@@ -23,23 +24,36 @@ public class RoundController : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    private void Update()
+    public void ValidateWinCondition()
     {
-        // TODO: Should listen to an enemy death event instead for performance
         if (activeEnemies.items.Count <= 0)
         {
-            Debug.LogWarning("No active enemies!");
-            currentRound.value++;
-            OnRoundWin.Raise();
-            enabled = false;
+            TriggerWinCondition();
         }
-        if (playerDamageable.currentHealth <= 0)
+    }
+
+    public void ValidateLoseCondition()
+    {
+        if (currentPlayerHealth.Value <= 0)
         {
-            Debug.LogWarning("Player died!");
-            currentRound.value = 1;
-            OnRoundLose.Raise();
-            enabled = false;
+            TriggerLoseCondition();
         }
+    }
+
+    private void TriggerLoseCondition()
+    {
+        Debug.LogWarning("Player died!");
+        currentRound.SetValue(1);
+        OnRoundLose.Raise();
+        gameObject.SetActive(false);
+    }
+
+    private void TriggerWinCondition()
+    {
+        Debug.LogWarning("No active enemies!");
+        currentRound.ApplyChange(+1);
+        OnRoundWin.Raise();
+        gameObject.SetActive(false);
     }
 
     public void SpawnPlayer()
@@ -48,10 +62,10 @@ public class RoundController : MonoBehaviour
         if (playerDamageable == null)
         {
             playerDamageable = Instantiate(playerPrefab).GetComponent<Damageable>();
-            OnPlayerSpawn.Raise();
         }
 
         playerDamageable.transform.position = Vector3.zero;
+        OnPlayerSpawn.Raise();
     }
 
     public void RemoveActiveProjectiles()
