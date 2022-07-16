@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class PauseController : MonoBehaviour
@@ -7,6 +6,7 @@ public class PauseController : MonoBehaviour
     public GameObject pauseOverlay;
     public TextMeshProUGUI titleUI;
     public GameObject continueButton;
+
     public bool isGameOver = false;
     public bool overlayActive = false;
 

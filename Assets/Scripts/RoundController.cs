@@ -12,6 +12,7 @@ public class RoundController : MonoBehaviour
     public IntReference currentPlayerHealth;
     public GameEvent OnRoundWin;
     public GameEvent OnRoundLose;
+    public GameEvent OnRoundEnd;
     public GameEvent OnPlayerSpawn;
 
     private void OnEnable()
@@ -29,6 +30,7 @@ public class RoundController : MonoBehaviour
         if (activeEnemies.items.Count <= 0)
         {
             TriggerWinCondition();
+            OnRoundEnd.Raise();
         }
     }
 
@@ -37,6 +39,7 @@ public class RoundController : MonoBehaviour
         if (currentPlayerHealth.Value <= 0)
         {
             TriggerLoseCondition();
+            OnRoundEnd.Raise();
         }
     }
 

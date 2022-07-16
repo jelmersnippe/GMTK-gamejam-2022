@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     public int damage = 10;
     public int shots = 1;
     public float spread = 5f;
+    public int maxHits = 1;
+    public float projectileSpeed = 25f;
 
     private float timeUntillNextShot;
 
@@ -34,6 +36,8 @@ public class Weapon : MonoBehaviour
         {
             Projectile spawnedProjectile = Instantiate(projectile, firePoint.position, Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, 0f, Random.Range(-spread, spread))));
             spawnedProjectile.damage = damage;
+            spawnedProjectile.maxHits = maxHits;
+            spawnedProjectile.speed = projectileSpeed;
         }
 
         timeUntillNextShot = 1f / fireRate;
