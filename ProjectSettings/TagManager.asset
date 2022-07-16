@@ -42,3 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tiles
+    uniqueID: 3715930027
+    locked: 0
+  - name: Units
+    uniqueID: 164742975
+    locked: 0
+  - name: Weapons
+    uniqueID: 2156981137
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3483059949
+    locked: 0

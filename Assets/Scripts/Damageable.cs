@@ -20,6 +20,8 @@ public class Damageable : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            // Disable collider to prevent unit soaking up bullets when already dead
+            GetComponent<Collider2D>().enabled = false;
             Destroy(gameObject);
         }
     }
