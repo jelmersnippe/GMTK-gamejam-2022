@@ -14,12 +14,21 @@ public class DiceRowUI : MonoBehaviour
         Clear();
     }
 
-    public void AddDiceUiItem(Sprite sprite)
+    public void UpdateDiceUiItem(int index, Sprite sprite)
     {
-        DieUI createdUI = Instantiate(dieUIPrefab, diceContainer);
+        DieUI dieUI;
 
-        createdUI.display.gameObject.SetActive(sprite != null);
-        createdUI.SetDisplay(sprite);
+        if (index >= diceContainer.childCount)
+        {
+            dieUI = Instantiate(dieUIPrefab, diceContainer);
+        }
+        else
+        {
+            dieUI = diceContainer.GetChild(index).GetComponent<DieUI>();
+        }
+
+        dieUI.display.gameObject.SetActive(sprite != null);
+        dieUI.SetDisplay(sprite);
     }
 
     public void Clear()
