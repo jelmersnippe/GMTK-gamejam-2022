@@ -38,7 +38,6 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log(originalPosition);
         transform.localPosition = originalPosition;
     }
 }

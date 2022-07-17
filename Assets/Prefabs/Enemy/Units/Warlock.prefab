@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  minShootRange: 16
+  minShootRange: 12.5
   firingRange: 4
   shooting: {fileID: 1770794597850725486}
   target: {fileID: 0}

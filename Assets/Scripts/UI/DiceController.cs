@@ -80,7 +80,6 @@ public class DiceController : MonoBehaviour
 
         DiceOption<Weapon> rolledWeapon = weaponDice.Roll();
         weaponToSpawn.value = rolledWeapon.value;
-        Debug.Log("RollWeapon updating UI");
         weaponDiceRowUI.UpdateDiceUiItem(0, rolledWeapon.sprite);
 
         UpdateRollsRemaining(rollsRemaining.Value - 1);
@@ -102,7 +101,6 @@ public class DiceController : MonoBehaviour
 
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
             rolledEnemies[i] = rolledEnemy;
-            Debug.Log("RollEnemies updating UI");
             enemyDiceRowUI.UpdateDiceUiItem(i, rolledEnemy.sprite);
         }
 
@@ -125,7 +123,6 @@ public class DiceController : MonoBehaviour
 
             DiceOption<Upgrade> rolledUpgrade = upgradeDice.Roll();
             rolledUpgrades[i] = rolledUpgrade;
-            Debug.Log("RollUpgrades updating UI");
             upgradeDiceRowUI.UpdateDiceUiItem(i, rolledUpgrade.sprite);
         }
 
