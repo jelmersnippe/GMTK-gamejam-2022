@@ -60,6 +60,8 @@ public class Damageable : MonoBehaviour
             popup.SetDamage(damage);
         }
 
+        CameraShake.instance.Shake(0.05f, 0.05f);
+
         spriteRenderer.material = hitFlashMaterial;
         StartCoroutine(ResetMaterial());
         currentHealth.ApplyChange(-damage);
