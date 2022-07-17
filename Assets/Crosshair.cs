@@ -12,11 +12,6 @@ public class Crosshair : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     private void Update()
     {
         Vector3 mousePosition = MousePosition.Get();

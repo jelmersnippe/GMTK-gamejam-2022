@@ -246,7 +246,7 @@ MonoBehaviour:
   target: {fileID: 0}
   spriteRenderer: {fileID: 0}
   currentState: 0
-  initialDelay: 2.5
+  initialDelay: 1
 --- !u!114 &1770794597850725486
 MonoBehaviour:
   m_ObjectHideFlags: 0
