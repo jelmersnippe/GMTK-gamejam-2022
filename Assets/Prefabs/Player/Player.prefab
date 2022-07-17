@@ -172,6 +172,9 @@ MonoBehaviour:
     maxPitch: 1.2
     minVolume: 0.6
     maxVolume: 0.6
+  hitFlashMaterial: {fileID: 2100000, guid: 5f0de4b53f97aab4cb6963e7bbfbde32, type: 2}
+  hitFlashDuration: 0.15
+  spriteRenderer: {fileID: 3779917378401923381}
 --- !u!114 &3779917378401923370
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Damageable : MonoBehaviour
 {
     public GameEvent OnHealthUpdate;
@@ -9,6 +11,10 @@ public class Damageable : MonoBehaviour
     public float invincibilityTime;
     public AudioSource audioSource;
     public Sound[] sounds;
+    private Material initialMaterial;
+    public Material hitFlashMaterial;
+    public float hitFlashDuration = 0.15f;
+    public SpriteRenderer spriteRenderer;
 
     private float remainingInvicibiltyTime;
 
@@ -17,6 +23,7 @@ public class Damageable : MonoBehaviour
         currentHealth.SetValue(maxHealth);
         OnHealthUpdate.Raise();
         UpdateHealthBar();
+        initialMaterial = spriteRenderer.material;
     }
 
     private void Update()
@@ -40,6 +47,8 @@ public class Damageable : MonoBehaviour
             AudioManager.PlaySound(audioSource, sounds[soundsIndex]);
         }
 
+        spriteRenderer.material = hitFlashMaterial;
+        StartCoroutine(ResetMaterial());
         currentHealth.ApplyChange(-damage);
         remainingInvicibiltyTime = invincibilityTime;
         OnHealthUpdate.Raise();
@@ -56,5 +65,11 @@ public class Damageable : MonoBehaviour
     private void UpdateHealthBar()
     {
         healthBar?.SetFill((float)currentHealth / (float)maxHealth);
+    }
+
+    private IEnumerator ResetMaterial()
+    {
+        yield return new WaitForSeconds(hitFlashDuration);
+        spriteRenderer.material = initialMaterial;
     }
 }
