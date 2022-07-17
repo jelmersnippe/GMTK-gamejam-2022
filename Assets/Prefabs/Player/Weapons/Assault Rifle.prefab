@@ -115,6 +115,7 @@ MonoBehaviour:
   spread: 5
   maxHits: 1
   projectileSpeed: 25
+  cameraShakeMagnitude: 0.05
 --- !u!82 &3932243914473224961
 AudioSource:
   m_ObjectHideFlags: 0

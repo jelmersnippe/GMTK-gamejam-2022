@@ -17,6 +17,8 @@ public class Weapon : MonoBehaviour
     public int maxHits = 1;
     public float projectileSpeed = 25f;
 
+    public float cameraShakeMagnitude = 0.2f;
+
     private float timeUntillNextShot;
 
     private void Update()
@@ -33,6 +35,7 @@ public class Weapon : MonoBehaviour
         {
             return;
         }
+        CameraShake.instance.Shake(0.1f, cameraShakeMagnitude);
 
         if (sounds.Length > 0)
         {

@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform followTarget;
+    public Transform followTarget;
 
     public void Update()
     {
         if (followTarget == null)
         {
+            SetPlayerAsFollowTarget();
             return;
         }
 
