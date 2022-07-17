@@ -167,11 +167,11 @@ MonoBehaviour:
   invincibilityTime: 1
   audioSource: {fileID: -6596478606577084174}
   sounds:
-  - source: {fileID: 8300000, guid: db5cc3321d02a66459e9e1ab52fb5ae8, type: 3}
+  - source: {fileID: 8300000, guid: a4ec5a3085103114f933da5c206b8b58, type: 3}
     minPitch: 1
     maxPitch: 1.2
-    minVolume: 0.3
-    maxVolume: 0.3
+    minVolume: 0.6
+    maxVolume: 0.6
 --- !u!114 &3779917378401923370
 MonoBehaviour:
   m_ObjectHideFlags: 0
