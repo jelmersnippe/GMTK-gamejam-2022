@@ -378,8 +378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: To Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -513,8 +513,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -648,8 +648,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -851,8 +851,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -956,7 +956,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1064841998
 CanvasRenderer:
@@ -1127,7 +1127,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1381483372
 CanvasRenderer:
@@ -1499,7 +1499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1896956902
 CanvasRenderer:
@@ -1629,8 +1629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -343.77457}
-  m_SizeDelta: {x: 1080, y: 101.42183}
+  m_AnchoredPosition: {x: 540, y: -264.97412}
+  m_SizeDelta: {x: 1080, y: 71.585655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &623222482474336403
 GameObject:
@@ -1783,8 +1783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -120.820915}
-  m_SizeDelta: {x: 1080, y: 141.64183}
+  m_AnchoredPosition: {x: 540, y: -103.79783}
+  m_SizeDelta: {x: 1080, y: 107.59566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5359287460315080588
 CanvasRenderer:
@@ -1816,8 +1816,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PAUSED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1985,7 +1985,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775891903194875844}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93958457852f7e84fbc42320b21be143, type: 3}
   m_Name: 
@@ -2404,8 +2404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -546.6182}
-  m_SizeDelta: {x: 1080, y: 101.42183}
+  m_AnchoredPosition: {x: 540, y: -408.14545}
+  m_SizeDelta: {x: 1080, y: 71.585655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5341974520485130389
 GameObject:
@@ -2475,8 +2475,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Rolls: 1/3'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2500,8 +2500,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2610,8 +2610,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Round: 1'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2635,8 +2635,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2749,8 +2749,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -445.19638}
-  m_SizeDelta: {x: 1080, y: 101.42183}
+  m_AnchoredPosition: {x: 540, y: -336.55978}
+  m_SizeDelta: {x: 1080, y: 71.585655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7629533654433443979
 GameObject:
@@ -2790,7 +2790,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3311489279980193833
 CanvasRenderer:
@@ -2920,8 +2920,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -242.35275}
-  m_SizeDelta: {x: 1080, y: 101.42183}
+  m_AnchoredPosition: {x: 540, y: -193.38849}
+  m_SizeDelta: {x: 1080, y: 71.585655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8955799831095379179
 GameObject:
@@ -2991,8 +2991,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
+  m_sharedMaterial: {fileID: -7893179001526807644, guid: 08de7fdd1de8a2748a0e843495a6f125, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3407,6 +3407,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RollUpgrades
       objectReference: {fileID: 0}
+    - target: {fileID: 154665721, guid: dcd56d2451429804fb453add36410a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ec4da89f1ddb7c4bbdad1843622ddae, type: 3}
     - target: {fileID: 317151255415388754, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: rollButton
       value: 
@@ -3441,11 +3445,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1738762158220848063, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1738762158220848063, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_fontSizeBase
-      value: 26
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2011785743474414447, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_Pivot.x
@@ -3743,6 +3747,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RollWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 154665721, guid: dcd56d2451429804fb453add36410a21, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae69b422e28917d489af0e08187cd719, type: 3}
     - target: {fileID: 317151255415388754, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: rollButton
       value: 
@@ -3777,11 +3785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1738762158220848063, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_fontSize
-      value: 26
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1738762158220848063, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_fontSizeBase
-      value: 26
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2011785743474414447, guid: dcd56d2451429804fb453add36410a21, type: 3}
       propertyPath: m_Pivot.x
