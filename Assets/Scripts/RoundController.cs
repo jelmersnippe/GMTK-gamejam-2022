@@ -17,6 +17,10 @@ public class RoundController : MonoBehaviour
     public GameEvent OnPlayerSpawn;
     public float roundEndDelay = 2f;
 
+    public AudioSource audioSource;
+    public Sound winSound;
+    public Sound loseSound;
+
     private void OnEnable()
     {
         Time.timeScale = 1f;
@@ -45,6 +49,7 @@ public class RoundController : MonoBehaviour
 
     private IEnumerator TriggerLoseCondition()
     {
+        AudioManager.PlaySound(audioSource, loseSound);
         Debug.LogWarning("Player died!");
         yield return new WaitForSeconds(roundEndDelay);
         currentRound.SetValue(1);
@@ -55,6 +60,7 @@ public class RoundController : MonoBehaviour
 
     private IEnumerator TriggerWinCondition()
     {
+        AudioManager.PlaySound(audioSource, winSound);
         Debug.LogWarning("No active enemies!");
         yield return new WaitForSeconds(roundEndDelay);
         currentRound.ApplyChange(+1);
