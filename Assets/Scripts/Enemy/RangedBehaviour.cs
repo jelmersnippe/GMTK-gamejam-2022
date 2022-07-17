@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class RangedBehaviour : MonoBehaviour
 {
     private enum State
@@ -14,6 +15,7 @@ public class RangedBehaviour : MonoBehaviour
     public Shooting shooting;
 
     public Transform target;
+    public SpriteRenderer spriteRenderer;
     [SerializeField] private State currentState = State.Chasing;
 
     private void Start()
@@ -22,6 +24,8 @@ public class RangedBehaviour : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Player")?.transform;
         }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -42,6 +46,9 @@ public class RangedBehaviour : MonoBehaviour
                 break;
         }
 
+
+        float targetAngle = Mathf.Abs(Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg);
+        spriteRenderer.flipX = targetAngle > 90f && targetAngle < 270f;
     }
 
     private void ChasingBehaviour()
