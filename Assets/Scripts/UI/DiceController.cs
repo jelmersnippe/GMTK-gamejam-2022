@@ -44,15 +44,13 @@ public class DiceController : MonoBehaviour
         while (currentRound > rolledEnemies.Count)
         {
             DiceOption<Enemy> rolledEnemy = enemyDice.Roll();
-            Debug.Log("Init enemies updating UI");
             enemyDiceRowUI.UpdateDiceUiItem(rolledEnemies.Count, rolledEnemy.sprite);
             rolledEnemies.Add(rolledEnemy);
         }
 
-        while (currentRound > rolledUpgrades.Count)
+        while (Mathf.FloorToInt(currentRound / 2) > rolledUpgrades.Count)
         {
             DiceOption<Upgrade> rolledUpgrade = upgradeDice.Roll();
-            Debug.Log("Init upgrades updating UI");
             upgradeDiceRowUI.UpdateDiceUiItem(rolledUpgrades.Count, rolledUpgrade.sprite);
             rolledUpgrades.Add(rolledUpgrade);
         }
@@ -61,6 +59,16 @@ public class DiceController : MonoBehaviour
         RollUpgrades();
         RollWeapon();
         UpdateRollsRemaining(3);
+
+        if (rolledEnemies.Count <= 0)
+        {
+            enemyDiceRowUI.rollButton.interactable = false;
+        }
+
+        if (rolledUpgrades.Count <= 0)
+        {
+            upgradeDiceRowUI.rollButton.interactable = false;
+        }
     }
 
     public void RollWeapon()

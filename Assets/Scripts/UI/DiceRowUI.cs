@@ -15,16 +15,13 @@ public class DiceRowUI : MonoBehaviour
 
         if (index >= diceContainer.childCount)
         {
-            Debug.Log("Created new die at index " + index);
             dieUI = Instantiate(dieUIPrefab, diceContainer);
         }
         else
         {
-            Debug.Log("Fetching die at index " + index);
             dieUI = diceContainer.GetChild(index).GetComponent<DieUI>();
         }
 
-        Debug.Log("sprite != null" + sprite != null);
         dieUI.display.gameObject.SetActive(sprite != null);
         dieUI.SetDisplay(sprite);
     }
