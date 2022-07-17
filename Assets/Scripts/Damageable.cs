@@ -7,6 +7,8 @@ public class Damageable : MonoBehaviour
     [field: SerializeField] public IntReference currentHealth { get; private set; }
     public HealthBar healthBar;
     public float invincibilityTime;
+    public AudioSource audioSource;
+    public Sound[] sounds;
 
     private float remainingInvicibiltyTime;
 
@@ -30,6 +32,12 @@ public class Damageable : MonoBehaviour
         if (remainingInvicibiltyTime > 0f)
         {
             return;
+        }
+
+        if (sounds.Length > 0)
+        {
+            int soundsIndex = Random.Range(0, sounds.Length);
+            AudioManager.PlaySound(audioSource, sounds[soundsIndex]);
         }
 
         currentHealth.ApplyChange(-damage);

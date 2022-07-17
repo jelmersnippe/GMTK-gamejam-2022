@@ -9,11 +9,6 @@ public class DiceRowUI : MonoBehaviour
     public RectTransform diceContainer;
     public Button rollButton;
 
-    private void Start()
-    {
-        Clear();
-    }
-
     public void UpdateDiceUiItem(int index, Sprite sprite)
     {
         DieUI dieUI;
@@ -29,6 +24,7 @@ public class DiceRowUI : MonoBehaviour
             dieUI = diceContainer.GetChild(index).GetComponent<DieUI>();
         }
 
+        Debug.Log("sprite != null" + sprite != null);
         dieUI.display.gameObject.SetActive(sprite != null);
         dieUI.SetDisplay(sprite);
     }

@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour
     public Transform firePoint;
     public Projectile projectile;
     public SpriteRenderer spriteRenderer;
+    public AudioSource audioSource;
+    public Sound[] sounds;
 
     [Header("Weapon Stats")]
     [Min(0.1f)]
@@ -30,6 +32,12 @@ public class Weapon : MonoBehaviour
         if (timeUntillNextShot > 0f)
         {
             return;
+        }
+
+        if (sounds.Length > 0)
+        {
+            int soundIndex = Random.Range(0, sounds.Length);
+            AudioManager.PlaySound(audioSource, sounds[soundIndex]);
         }
 
         for (int i = 0; i < shots; i++)

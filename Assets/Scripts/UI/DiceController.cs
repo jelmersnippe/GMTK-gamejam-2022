@@ -26,6 +26,11 @@ public class DiceController : MonoBehaviour
 
     private void Start()
     {
+        rolledEnemies = new List<DiceOption<Enemy>>();
+        rolledUpgrades = new List<DiceOption<Upgrade>>();
+        enemyDiceRowUI.Clear();
+        upgradeDiceRowUI.Clear();
+        weaponDiceRowUI.Clear();
         Reset();
     }
 

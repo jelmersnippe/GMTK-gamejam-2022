@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
@@ -14,6 +15,7 @@ public class RoundController : MonoBehaviour
     public GameEvent OnRoundLose;
     public GameEvent OnRoundEnd;
     public GameEvent OnPlayerSpawn;
+    public float roundEndDelay = 2f;
 
     private void OnEnable()
     {
@@ -29,8 +31,7 @@ public class RoundController : MonoBehaviour
     {
         if (activeEnemies.items.Count <= 0)
         {
-            TriggerWinCondition();
-            OnRoundEnd.Raise();
+            StartCoroutine(TriggerWinCondition());
         }
     }
 
@@ -38,25 +39,28 @@ public class RoundController : MonoBehaviour
     {
         if (currentPlayerHealth.Value <= 0)
         {
-            TriggerLoseCondition();
-            OnRoundEnd.Raise();
+            StartCoroutine(TriggerLoseCondition());
         }
     }
 
-    private void TriggerLoseCondition()
+    private IEnumerator TriggerLoseCondition()
     {
         Debug.LogWarning("Player died!");
+        yield return new WaitForSeconds(roundEndDelay);
         currentRound.SetValue(1);
         OnRoundLose.Raise();
         gameObject.SetActive(false);
+        OnRoundEnd.Raise();
     }
 
-    private void TriggerWinCondition()
+    private IEnumerator TriggerWinCondition()
     {
         Debug.LogWarning("No active enemies!");
+        yield return new WaitForSeconds(roundEndDelay);
         currentRound.ApplyChange(+1);
         OnRoundWin.Raise();
         gameObject.SetActive(false);
+        OnRoundEnd.Raise();
     }
 
     public void SpawnPlayer()
