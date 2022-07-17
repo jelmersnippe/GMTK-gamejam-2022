@@ -8,14 +8,19 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void LoadMainMenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadGameScene()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void LoadMainMenuScene()
+    public void LoadInfoScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 
     public void QuitApplication()
