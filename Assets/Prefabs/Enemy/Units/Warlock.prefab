@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1770794597850725487}
   - component: {fileID: 1770794597850725486}
   - component: {fileID: 5653021579354873616}
+  - component: {fileID: 5075427440313147696}
   m_Layer: 10
   m_Name: Warlock
   m_TagString: Enemy
@@ -354,6 +355,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &5075427440313147696
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770794597850725393}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 51f4b40602ae4ba4e80302e8ee08b1c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1770794597076778769
 PrefabInstance:
   m_ObjectHideFlags: 0

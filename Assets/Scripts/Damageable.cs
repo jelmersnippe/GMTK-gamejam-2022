@@ -19,10 +19,14 @@ public class Damageable : MonoBehaviour
 
     private float remainingInvicibiltyTime;
 
-    private void Start()
+    private void Awake()
     {
         activeMaxHealth = maxHealth;
         currentHealth.SetValue(activeMaxHealth);
+    }
+
+    private void Start()
+    {
         OnHealthUpdate.Raise();
         UpdateHealthBar();
         initialMaterial = spriteRenderer.material;

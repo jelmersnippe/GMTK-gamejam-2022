@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour
     private void OnEnable()
     {
         activeEnemies.Add(this);
+    }
+
+    private void Start()
+    {
         damageable.UpdateMaxHealth(healthIncreasePerRound * currentRound);
     }
 

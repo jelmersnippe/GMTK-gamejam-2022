@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -7,6 +5,7 @@ public class Movement : MonoBehaviour
     public float speed = 5f;
     public Sound[] sounds;
     public AudioSource audioSource;
+    public Animator animator;
 
     public float timeBetweenSounds = 0.5f;
     private float timeRemainingToNextSound;
@@ -21,7 +20,13 @@ public class Movement : MonoBehaviour
 
     public void Move(Vector2 input)
     {
-        if (input != Vector2.zero && timeRemainingToNextSound <= 0f && sounds.Length > 0)
+        animator?.SetBool("IsMoving", input != Vector2.zero);
+        if (input == Vector2.zero)
+        {
+            return;
+        }
+
+        if (timeRemainingToNextSound <= 0f && sounds.Length > 0)
         {
             int soundIndex = Random.Range(0, sounds.Length);
             AudioManager.PlaySound(audioSource, sounds[soundIndex]);
