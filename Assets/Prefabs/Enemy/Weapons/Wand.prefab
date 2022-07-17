@@ -109,12 +109,12 @@ MonoBehaviour:
     maxPitch: 2.8
     minVolume: 0.2
     maxVolume: 0.2
-  fireRate: 0.5
+  fireRate: 0.3
   damage: 5
   shots: 1
-  spread: 5
+  spread: 10
   maxHits: 1
-  projectileSpeed: 25
+  projectileSpeed: 15
 --- !u!82 &-2112077273611684676
 AudioSource:
   m_ObjectHideFlags: 0

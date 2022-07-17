@@ -219,6 +219,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDeath: {fileID: 11400000, guid: 8e49f36b3c3ce7548a5b320bf00e220f, type: 2}
   activeEnemies: {fileID: 11400000, guid: e8427ccfe608a884ca64b2233a519fd8, type: 2}
+  damageable: {fileID: 1770794597850725485}
+  currentRound:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 857842116f667ef4394ede49587da652, type: 2}
+  healthIncreasePerRound: 4
 --- !u!114 &1770794597850725487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,8 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  minShootRange: 8
-  firingRange: 6
+  minShootRange: 16
+  firingRange: 4
   shooting: {fileID: 1770794597850725486}
   target: {fileID: 0}
   currentState: 0

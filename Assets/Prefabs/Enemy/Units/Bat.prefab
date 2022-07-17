@@ -202,6 +202,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnDeath: {fileID: 11400000, guid: 8e49f36b3c3ce7548a5b320bf00e220f, type: 2}
   activeEnemies: {fileID: 11400000, guid: e8427ccfe608a884ca64b2233a519fd8, type: 2}
+  damageable: {fileID: 6447477172539387294}
+  currentRound:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 857842116f667ef4394ede49587da652, type: 2}
+  healthIncreasePerRound: 3
 --- !u!114 &6447477172539387288
 MonoBehaviour:
   m_ObjectHideFlags: 0

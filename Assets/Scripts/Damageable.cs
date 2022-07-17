@@ -6,6 +6,7 @@ public class Damageable : MonoBehaviour
 {
     public GameEvent OnHealthUpdate;
     public IntReference maxHealth;
+    private int activeMaxHealth;
     [field: SerializeField] public IntReference currentHealth { get; private set; }
     public HealthBar healthBar;
     public float invincibilityTime;
@@ -20,7 +21,8 @@ public class Damageable : MonoBehaviour
 
     private void Start()
     {
-        currentHealth.SetValue(maxHealth);
+        activeMaxHealth = maxHealth;
+        currentHealth.SetValue(activeMaxHealth);
         OnHealthUpdate.Raise();
         UpdateHealthBar();
         initialMaterial = spriteRenderer.material;
@@ -64,12 +66,19 @@ public class Damageable : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar?.SetFill((float)currentHealth / (float)maxHealth);
+        healthBar?.SetFill((float)currentHealth / (float)activeMaxHealth);
     }
 
     private IEnumerator ResetMaterial()
     {
         yield return new WaitForSeconds(hitFlashDuration);
         spriteRenderer.material = initialMaterial;
+    }
+
+    public void UpdateMaxHealth(int change)
+    {
+        activeMaxHealth += change;
+        currentHealth.ApplyChange(change);
+        UpdateHealthBar();
     }
 }

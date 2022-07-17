@@ -4,10 +4,14 @@ public class Enemy : MonoBehaviour
 {
     public GameEvent OnDeath;
     public EnemyRuntimeSet activeEnemies;
+    public Damageable damageable;
+    public IntReference currentRound;
+    public int healthIncreasePerRound = 4;
 
     private void OnEnable()
     {
         activeEnemies.Add(this);
+        damageable.UpdateMaxHealth(healthIncreasePerRound * currentRound);
     }
 
     private void OnDisable()
