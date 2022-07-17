@@ -16,6 +16,7 @@ public class Damageable : MonoBehaviour
     public Material hitFlashMaterial;
     public float hitFlashDuration = 0.15f;
     public SpriteRenderer spriteRenderer;
+    public DamageNumber damageNumber;
 
     private float remainingInvicibiltyTime;
 
@@ -51,6 +52,12 @@ public class Damageable : MonoBehaviour
         {
             int soundsIndex = Random.Range(0, sounds.Length);
             AudioManager.PlaySound(audioSource, sounds[soundsIndex]);
+        }
+
+        if (damageNumber != null)
+        {
+            DamageNumber popup = Instantiate(damageNumber, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
+            popup.SetDamage(damage);
         }
 
         spriteRenderer.material = hitFlashMaterial;

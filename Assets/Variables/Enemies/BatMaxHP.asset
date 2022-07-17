@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed4e2504315ff0a4681d2166a4d2a31e, type: 3}
-  m_Name: PlayerMaxHP
+  m_Name: BatMaxHP
   m_EditorClassIdentifier: 
   DeveloperDescription: 
-  Value: 100
+  Value: 60

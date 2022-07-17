@@ -18,6 +18,8 @@ public class RangedBehaviour : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     [SerializeField] private State currentState = State.Chasing;
 
+    public float initialDelay = 2.5f;
+
     private void Start()
     {
         if (target == null)
@@ -30,6 +32,10 @@ public class RangedBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (initialDelay > 0f)
+        {
+            initialDelay -= Time.deltaTime;
+        }
         if (target == null)
         {
             return;
@@ -64,7 +70,10 @@ public class RangedBehaviour : MonoBehaviour
 
     private void FiringBehaviour()
     {
-        shooting.Shoot();
+        if (initialDelay <= 0f)
+        {
+            shooting.Shoot();
+        }
 
         float distanceToTarget = Vector3.Distance(target.transform.position, transform.position);
         if (distanceToTarget >= minShootRange + firingRange)

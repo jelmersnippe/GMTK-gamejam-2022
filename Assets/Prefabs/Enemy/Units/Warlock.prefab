@@ -206,6 +206,7 @@ MonoBehaviour:
   hitFlashMaterial: {fileID: 2100000, guid: 5f0de4b53f97aab4cb6963e7bbfbde32, type: 2}
   hitFlashDuration: 0.15
   spriteRenderer: {fileID: 1770794597850725480}
+  damageNumber: {fileID: 4013236142568058019, guid: 2261b5bbcb5f601468282b631ce7e80f, type: 3}
 --- !u!114 &1770794597850725484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +244,9 @@ MonoBehaviour:
   firingRange: 4
   shooting: {fileID: 1770794597850725486}
   target: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   currentState: 0
+  initialDelay: 2.5
 --- !u!114 &1770794597850725486
 MonoBehaviour:
   m_ObjectHideFlags: 0

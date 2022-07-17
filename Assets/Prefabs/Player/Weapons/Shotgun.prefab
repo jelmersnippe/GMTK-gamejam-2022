@@ -110,7 +110,7 @@ MonoBehaviour:
     minVolume: 0.3
     maxVolume: 0.3
   fireRate: 0.5
-  damage: 5
+  damage: 10
   shots: 6
   spread: 20
   maxHits: 1

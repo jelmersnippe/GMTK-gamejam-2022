@@ -156,7 +156,7 @@ MonoBehaviour:
   maxHealth:
     UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 2e4d74735351f41438125228fac02981, type: 2}
+    Variable: {fileID: 11400000, guid: 31b9dcc077d9dae44be4829a69ddbdd7, type: 2}
   <currentHealth>k__BackingField:
     UseConstant: 1
     ConstantValue: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   hitFlashMaterial: {fileID: 2100000, guid: 5f0de4b53f97aab4cb6963e7bbfbde32, type: 2}
   hitFlashDuration: 0.15
   spriteRenderer: {fileID: 6447477172539387292}
+  damageNumber: {fileID: 4013236142568058019, guid: 2261b5bbcb5f601468282b631ce7e80f, type: 3}
 --- !u!114 &6447477172539387290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e822e0381dd81478d14aaa174dad7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   speed: 6
   target: {fileID: 0}
 --- !u!82 &2513413243300874318

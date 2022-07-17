@@ -9,6 +9,7 @@ MonoImporter:
   - audioSource: {instanceID: 0}
   - hitFlashMaterial: {fileID: 2100000, guid: 5f0de4b53f97aab4cb6963e7bbfbde32, type: 2}
   - spriteRenderer: {instanceID: 0}
+  - damageNumber: {fileID: 4013236142568058019, guid: 2261b5bbcb5f601468282b631ce7e80f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
