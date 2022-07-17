@@ -13,6 +13,6 @@ public class HUDController : MonoBehaviour
 
     public void UpdatePlayerHealthBar()
     {
-        playerHealthBar.SetFill((float)currentPlayerHealth.Value / (float)maxPlayerHealth.Value);
+        playerHealthBar.SetFill(currentPlayerHealth.Value, maxPlayerHealth.Value);
     }
 }

@@ -77,7 +77,7 @@ public class Damageable : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar?.SetFill((float)currentHealth / (float)activeMaxHealth);
+        healthBar?.SetFill(currentHealth, activeMaxHealth);
     }
 
     private IEnumerator ResetMaterial()
